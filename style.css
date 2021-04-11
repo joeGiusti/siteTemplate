@@ -1,0 +1,761 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaina+2:wght@600&display=swap');
+*{
+    padding: 0;
+    margin:0;
+    text-decoration: none;
+    list-style: none;
+
+}
+body{    
+    font-family: 'Baloo Bhaina 2';
+    color: #fff;
+    background-color: #93d0ff;
+    background-color: #ffeafd;
+    background-color: #ecf0f3;
+}
+div{
+    display: inline-block;
+}
+/*https://www.youtube.com/watch?v=oLgtucwjVII*/
+header{
+    height: 70px;
+    width: 100%;
+    background-color: #0082e6;
+    text-align: center;    
+    vertical-align: top;
+}
+.logo{
+    float:left;
+    width: 200px;
+    color: #fff;
+    font-size: 35px;
+    line-height: 70px;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+nav{
+    transition: 0.5s;
+    overflow: hidden;
+    transition: 1s;
+}
+ul{
+    transition: 0.3s;
+}
+nav ul{    
+    margin-top: 30px;
+    text-align: center;
+
+}
+nav ul li{
+    display: inline-block;
+    line-height: 40px;
+    margin: 0 5px;
+    color: #fff;
+    padding: 0 5px;
+    height: 40;
+
+    width:12%;
+    font-size: 16px;
+    border-radius: 5px 5px 0 0;
+}
+nav a:visited{
+    color: #fff;    
+}
+header li.active, li:hover{
+    background-color: #30a5ff;    
+    color: #0082e6;
+}
+.menuButton{
+    font-size: 40px;
+    float: right;
+    line-height: 80px;
+    cursor: pointer;
+    display: none;
+    margin-right: 20px;
+}
+
+section{
+    text-align: center;
+}
+.cardHolder{
+    width: 80%;
+    padding:20px;
+    background-color: #30a5ff;    
+    background-color: #c5e6ff;
+}
+.card{
+    height: 380px;
+    margin-right: 2%;
+    margin-top:20px;
+    background-color: #0082e6;
+    box-shadow: -2px 3px 6px rgb(87, 69, 123);
+    border-radius: 5px;
+    vertical-align: top;
+    color: #c3e5ff;
+    color: #fff;
+    transition: 0.3s;
+}
+.female{
+    background-color: #ff85ff;
+    background-color: #ffb6ff;
+    background-color: #d076d0;
+    color: rgb(255, 255, 255);
+}
+.otherGender{
+    background-color: #9976d0;
+    color: rgb(255, 255, 255);
+}
+.profileBox{
+    width: 95%;
+    height: 550px;
+    margin-top: 2%;
+}
+/* note this is also affected in a duplicate class below*/
+.profileCard:hover{    
+    background-color: #93d0ff;
+    background-color: #7cc6ff;
+    
+    color: #fff;
+    height: 382px;
+    margin-top:15px;
+    box-shadow: -5px 8px 8px rgb(65, 119, 220);    
+    box-shadow: -3px 6px 8px rgb(89, 79, 107);    
+    
+}
+.female:hover{
+    background-color: #ffb6ff;  
+}
+.cardName{
+    width: 80%;
+    height: 30;
+    text-align: left;
+    overflow: hidden;
+}
+.cardAge{
+    height: 30;
+    width: 18%;
+    overflow: hidden;
+}
+.welcomeCard{
+    width: 46.5%;
+}
+.welcomeName{
+    font-size: 40px;
+    font-weight: bold;
+    border-radius: 5px;
+    background-color: rgb(189, 189, 255);
+    width: 95%;
+    height: 70px;
+    margin-top: 10px;
+}
+.welcomeInfo{
+    height: 270px;
+    width: 95%;
+    margin-top: 10px;
+    background-color: rgb(189, 189, 255);
+    border-radius: 5px;
+}
+.profileCard{
+    width:22%;    
+}
+.profileCard:hover{
+    width: 23%;
+}
+.profileCardInfo{
+    width: 90%;
+
+}
+.profileCardImage{
+    height: 54%;
+    width: 100%;
+    margin-top: 10px;
+    
+    overflow: hidden;
+    background-size: cover;
+    background-image: url("./img/profile_placeholder.jpg");
+}
+.profileCardImage img{
+
+}
+.show800to1100{
+    display: none;
+}
+.hide800to1100{
+    display: inline-block;
+}
+.chooseImageButton{
+    width: 95%;
+    height: 40px;
+    line-height: 40px;
+    background-color: blue;
+    border-radius: 3px;
+    font-size: 14px;
+}
+
+.nameAgeLine{
+    height: 30px;
+    width: 100%;
+    font-size: 20px;
+}
+.bioSection{
+    height: 70px;
+    width: 100%;
+    margin-top: 10px;
+    font-size: 12px;
+    overflow: hidden;
+}
+.buttonRow{
+    width: 100%;
+    text-align: center;
+    height: 40px;
+    margin-top: 10px;
+}
+.buttonRow a{
+    width: 23%;
+    display: inline-block;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    border-radius: 2px;
+    cursor: pointer;    
+}
+.buttonRow a:hover .toolTip{
+    display: block;
+}
+.floatingSearchBar{
+    width: 95%;
+    margin-left: -2%;
+    height: 80px;
+    background-color: #def2ff;
+    border-radius: 10px;
+}
+.floatingSearchBar input{
+    height: 40px;
+    width: 70%;
+    float: left;
+    margin-left: 20px;
+    margin-top: 20px;
+    border-radius: 2px;
+}
+.floatingSearchBar button{
+    height: 40px;
+    border-radius: 2px;
+    width: 100px;
+    vertical-align: bottom;
+    margin-top: 20px;
+}
+.messageBox{
+    position: fixed;
+    width: 70%;
+    background-color: #def2ff;
+    box-shadow: -2px 4px 8px rgb(87, 69, 123);
+    border-radius: 10px;
+    text-align: center;
+    left:15%;
+    top:10%;
+    display: none;
+    color: blue;
+}
+.overlay{
+    position: fixed;
+    width: 70%;
+    min-width: 600px;
+    background-color: #def2ff;
+    box-shadow: -2px 4px 8px rgb(87, 69, 123);
+    border-radius: 10px;
+    text-align: center;
+    left:15%;
+    top:10%;    
+    color: blue;
+}
+textarea{
+    height: 200px;
+    width: 80%;
+    display: block;
+    margin-left: 10%;
+}
+.messageBoxTitle{
+    color: #0082e6; 
+    -webkit-text-stroke-width: 0.3px; 
+    -webkit-text-stroke-color: rgb(0, 0, 0); 
+    font-size:30px;
+    margin-top: 20px;
+    height: 50px;
+}
+.messageNameDiv{
+    width: 90%;
+    font-size: 20px;
+}
+.messageContentsDiv{
+    width: 90%;
+}
+.replyButton{
+    height: 40px;
+    line-height: 40px;
+    width: 80%;
+    margin: 10px;
+    border-radius: 10px;
+    color: rgb(55, 192, 55);
+    background-color: rgb(231, 255, 231);
+    cursor: pointer;
+}
+.closeButton{
+    float: right;
+    height: 30px;
+    width: 30px;
+    background-color: rgb(255, 152, 152);
+    color: #fff;
+    
+    font-size: 20px;
+    border:0;
+    border-radius: 5px;
+    position: absolute;
+    right:10px;
+    top: 10px;
+}
+.messageTexaArea{
+    font-size: 20px;
+    padding: 20px;
+}
+.messageBoxButton{    
+    background-color: #56b0f5;
+    height: 40px;
+    width: 43%;
+    border-radius: 5px;
+    border:0;
+    font-size: 20px;
+    color: #fff;
+    margin: 10px;
+    cursor: pointer;
+}
+.messageBoxButton:hover{    
+    background-color: #0082e6;
+}
+.lightRed{
+    background-color: rgb(255, 152, 152);
+}
+.lightRed:hover{
+    background-color: rgb(255, 106, 106);
+}
+.closeButton:hover{
+    background-color: rgb(255, 106, 106);
+}
+.messageSentBox{
+    position: absolute;
+    bottom: 80px;
+    left: 10%;
+    color: rgb(55, 192, 55);
+    background-color: rgb(231, 255, 231);
+    width: 80%;
+    height: 40px;
+    border-radius: 10px;
+    display: none;
+}
+#messageReplyBox{
+    display: inline-block;
+    padding: 20px;
+    margin: 0;
+    font-size: 16px;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+.showBlock{
+    display: block;
+}
+.loginBox{
+    position: fixed;
+    min-width: 600px;
+    max-width: 800px;
+    width: 80%;
+    background-color: #def2ff;
+    box-shadow: -2px 4px 8px rgb(87, 69, 123);
+    border-radius: 10px;
+    text-align: center;
+    left:10%;
+    top:15%;
+    color: #0082e6; 
+    -webkit-text-stroke-width: 0.3px; 
+    -webkit-text-stroke-color: rgb(0, 0, 0); 
+    font-size:25px;        
+}
+.loginBoxInner{
+    height: 90%;    
+    width: 90%;
+    margin-top: 5%;
+    color:rgb(14, 0, 53);    
+}
+.loginBoxTab{
+    width: 49%;
+    height: 50px;
+    line-height: 50px;
+    background-color: #ecf0f3;
+    background-color: rgb(197, 230, 255);
+    margin: 0;
+    padding: 0;
+    margin: -2px;
+    border-radius: 5px 5px 0 0;
+    cursor: pointer;
+    font-size: 25px;
+    background-color: rgb(116, 191, 248);
+}
+.loginInput{
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    border: 0px;
+    margin-top: 20px;
+    border-radius: 2px;
+    padding-left: 10px;
+}
+.tabInactive{
+    background-color: rgb(219, 240, 255);
+    background-color: rgb(210, 235, 253);
+}
+.tabInActive:hover{
+    background-color: rgb(158, 213, 255);
+}
+
+.loginFieldsSection{
+    width: 98%;
+    background-color: rgb(197, 230, 255);
+    padding-bottom: 20px;
+    border-radius: 0 0 5px 5px;
+    background-image: linear-gradient(rgb(116, 191, 248), rgb(197, 230, 255));
+}
+.loginMessage{
+    position: absolute;
+    bottom: 80px;
+    left: 10%;
+    color: rgb(55, 192, 55);
+    background-color: rgb(231, 255, 231);
+    width: 80%;
+    height: 40px;
+    border-radius: 10px;
+    display: none;
+}
+.conversationBox{
+    min-height: 80px;
+    width: 90%;
+    margin-top: 10px;
+    background-color: rgb(197, 230, 255);
+    box-shadow: -2px 4px 8px rgb(87, 69, 123);
+    border-radius: 5px;    
+}
+.messageCard{
+    min-height: 80px;
+    width: 90%;
+    margin:10px;
+    margin-top: 10px;
+    background-color: rgb(216, 197, 255);
+    box-shadow: -2px 4px 8px rgb(87, 69, 123);
+    border-radius: 5px;
+    float: right;
+}
+.messageCardSent{
+    float: left;
+    background-color: rgb(197, 230, 255);
+}
+.convBoxRecieved{
+
+}
+.conversationBox:hover{
+    background-color: rgb(116, 195, 255);
+}
+#profileImagePreview{
+    height: 250px;
+    width: 250px;
+    margin: 20px;
+    border-radius: 5px;
+}
+a img{
+    height: 30px;
+    width: 30px;
+    margin: 5px;
+}
+li a{
+    width: 100%;
+    display: inline-block;
+}
+.buttonRow a:hover{
+    background-color: orange;
+}
+.hidden{
+    display: none;
+}
+@media screen and (min-width: 1400px){
+    .cardHolder{
+        width: 1120px;
+    }
+}
+@media screen and (max-width: 1100px){
+
+    nav ul li{
+        width:10%;
+        font-size: 14px;
+    }
+
+    .profileCard{
+        width:30%;    
+    }
+    .profileCard:hover{
+        width: 31%;
+    }
+    .welcomeCard{
+        width: 63%;
+
+    }
+
+}
+@media screen and (min-width:800px) and (max-width:1100px){
+    .show800to1100{
+        display: inline-block;
+    }
+    .hide800to1100{
+        display: none;
+    }
+}
+@media screen and (max-width: 800px){    
+
+    .profileCard{
+        width:46%;    
+    }
+    .profileCard:hover{
+        width: 47%;
+    }
+    .welcomeCard{
+        width: 95%;
+    }
+    .menuButton{
+        display: inline-block;
+    }
+    .placeHolder{
+        height: 70px;
+    }
+    nav{
+        
+        overflow: hidden;
+        background-color: aqua;
+        z-index: 20;
+        position: absolute;
+        width: 100%;
+        height: 0;
+    }
+    nav ul li{
+        display: block;
+        width: 100%;
+        margin: 0;
+        font-size: 40px;
+        line-height: 60px;
+        height: 60px;
+    }
+    nav ul{
+        margin-top: 0;
+    }
+    .showNav{
+        height: 300px;
+    }
+
+}
+
+
+@media screen and (max-width: 550px){
+
+    .profileCard{
+        width:240px;    
+    }
+    .profileCard:hover{
+        width: 250px;
+    }
+    .welcomeCard{
+        width:280px;   
+    }
+
+}
+.initial{
+    background-color: aqua;
+}
+.li2{
+    width: 20%;
+    margin: 0;
+    padding: 0;
+    margin-left: -3px;
+}
+.ul2 div{
+    display: inline-block;    
+    background-color: #0082e6;
+    width: 20%;
+    height: 40px;
+    margin: 0px;
+    padding: 0;    
+}
+.ul2 div:hover{
+    background-color: rgba(255, 255, 255, 0);
+}
+.active2{
+    background-color: rgba(255, 255, 255, 0);
+}
+.indexBanner{
+    width: 2200px;
+}
+@media screen and (min-width: 2200px){
+    .indexBanner{
+        width: 100%;
+    }
+}
+.indexBody{
+    background-color: rgb(234, 248, 255);
+}
+.circleNumber{
+    height: 40px; 
+    width: 40px; 
+    color: white;
+    line-height: 48px;
+    font-size: 30px;
+    border-radius: 20px; 
+    background-color: rgb(180, 230, 180); 
+
+}
+hr{
+    width: 80%;
+    margin-left: 10%;
+}
+.numberDescription{
+    font-size: 25px;
+}
+.paragraph{
+    width: 80%;        
+    font-size: 16px;
+}
+.indexBox{
+    width: 95%; 
+    padding: 0;     
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: rgb(255, 249, 238);
+}
+.indexBoxText{
+    width: 48%; 
+    vertical-align: top;  
+    font-size: 40px;
+    margin-top: 10px;
+    vertical-align: middle;
+}
+.arrowButton{
+    height: 50px;
+    width: 35px; 
+    background-color: gray;
+    cursor: pointer; 
+    font-size: 30px;
+    border-radius: 5px;    
+    position: absolute;
+    vertical-align: top;
+    margin-top: 200px;
+}
+.arrowButton:hover{
+    background-color: rgb(170, 170, 170)
+}
+.button{
+    background-color: #0082e6;
+    height: 40px;
+    width: 43%;
+    border-radius: 5px;
+    border:0;
+    font-size: 20px;
+    color: #fff;
+    margin: 10px;
+    cursor: pointer;
+    display: inline-block;          
+}
+.button:hover{
+    background-color: #56b0f5;
+}
+a{
+    color: white;
+}
+.sectionCard{
+    width: 95%;
+    background-color: rgb(197, 230, 255);
+    background-image: linear-gradient(rgb(197, 230, 255), rgb(167, 217, 255));
+    background-image: linear-gradient(rgb(197, 230, 255), rgb(116, 191, 248));
+    border-radius: 10px;
+    box-sizing: border-box;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    margin-bottom: 40px;
+}
+@media screen and (min-width:1100px){
+    .sectionCard{
+        width: 80%;
+    }
+}
+@media screen and (min-width:1600px){
+    .sectionCard{
+        width: 70%;
+    }
+}
+.userCreatedMessage{
+    position: relative;
+    bottom: 50px;
+    left: 0;
+    color: rgb(55, 192, 55);
+    background-color: rgb(231, 255, 231);
+    width: 90%;
+    height: 40px;
+    border-radius: 10px;    
+}
+.tierBox{
+    width: 23%;
+    display: inline-block;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    border-radius: 2px;
+    cursor: pointer;  
+    vertical-align: top;
+    line-height: 40px;
+}
+.tierBox:hover{
+    background-color: orange;
+}   
+.greenTheme{
+    color: rgb(55, 192, 55);
+    background-color: rgb(231, 255, 231);
+}
+.greenTheme:hover{
+    background-color: rgb(151, 253, 142);
+    color: white;
+}
+.inputLabel{
+    color: black;
+    
+}
+.topSectionCard{
+    width: 44%; 
+    min-height: 400px; 
+    margin-right:3%; 
+    margin-top: -18%; 
+    vertical-align: top;
+
+    background-color: rgb(197, 230, 255);
+    background-image: linear-gradient(rgb(197, 230, 255), rgb(167, 217, 255));
+    background-image: linear-gradient(rgb(197, 230, 255), rgb(116, 191, 248));
+    border-radius: 10px;
+    box-sizing: border-box;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    margin-bottom: 40px;
+}
+@media screen and (max-width:800px){
+    .topSectionCard{
+        width: 90%;
+    }
+    .secondTopCard{
+        margin-top: -20px;
+    }
+}
+@media screen and (min-width:1600px){
+    .topSectionCard{
+        
+    }
+}

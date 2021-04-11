@@ -1,0 +1,349 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width" >        
+        <meta name="keywords" content="game development, unity, vr" >        
+        <meta name="author" content="noone" >        
+        <title>Demo Page | Landing</title>        
+        <link rel="stylesheet" href="style.css">
+        <script src="index.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        
+        <div id="redirectHome"></div>
+    </head>
+    <body>
+        <header>
+            <input type="checkbox" id="menuCheckbox" onclick="menuCheck()" style="display: none;">
+            <label for="menuCheckbox" class="menuButton">&#9776</label>
+
+            <a href="index.html"><div class="logo">Logo</div></a>
+            <div class="placeHolder"></div>
+            <nav id="topNav" class="">
+                <ul>
+                    <li class="active" id="activeNavButton"><a href="index.html">Start</a></li>                    
+                    <li><a href="users.html">Users</a></li>                    
+                    <li><a href="FAQ.html">F & Q</a></li>          
+                    <li id="profileNavButton" class="hidden"><a href="profile.html">Profile</a></li>
+                    <li id="loginNavButton" onclick="openLoginBox()" style="cursor: pointer;"><a>Login</a></li>                                        
+                </ul>
+            </nav>
+        </header>
+        <section class="messageBox" id="messageBox">
+
+            <div class="messageBoxTitle" id="messageNameSpan">Message Name</div>
+                <button class="closeButton" onclick="hideMessageBox()">X</button>
+            <textarea class="messageTexaArea" id="messageText" style="width: 90%; margin-left: 5%;"></textarea>
+            <div class="messageBoxButton lightRed" onclick="hideMessageBox()">Cancel</div>      
+         
+            <div class="messageBoxButton" onclick="sendMessage()">Send</div>        
+            <div id="messageSentBox" class="messageSentBox">
+                Message Sent!                                       
+            </div>    
+        </section>
+        <section class="overlay hidden" id="cartBox" style="width: 65%; height: 600px;">
+
+            <div class="messageBoxTitle" id="messageNameSpan">Checkout</div>
+            <button class="closeButton" onclick="hideCartBox()">X</button>
+            <div class="checkoutInnerBox" style="width: 96%; min-height:300px; height: 600px">
+                <div style="min-height: 400px; height: 510px; width: 90%; border-radius: 3px; background-color: rgb(161, 161, 255); vertical-align: top; font-size: 14px; color: #fff; margin-bottom:20px;  overflow-y: scroll;">
+                    <div id="checkout1">
+                        <br>
+                        <span style="font-size: 25px; color: white;">1: Choose a delivery day and time:</span> 
+                        <br>
+                        <input type="date" style="">
+                        <input type="time" style="">
+                        </br>
+                        <span style="font-size: 25px; color: white;">2: Special Instructions:</span> 
+                        <textarea style="margin-bottom: 0; padding: 10px;"></textarea>
+                        <br>
+                        <span style="font-size: 25px; color: white;">3: Choose a payment method</span> 
+                        <br>
+                        <button class="button greenTheme" onclick="showPaymentMethods()" style="width: 80%;">Show Payment Methods</button>    
+                    </div>
+                    <div id="checkout2" class="hidden">
+                        <img src="./img/redHairPackage.JPG" style="height: 250px; border-radius:3px; margin: 10px;">
+                        <script src="https://www.paypal.com/sdk/js?client-id=sb&currency=USD" data-sdk-integration-source="button-factory"></script>
+                        <script src="https://www.paypal.com/sdk/js?client-id=AQ6_K7OeLlnB5AHYMaVunft4mFhCwyc29Uam85BR94bIRkI4MUQ80DA66k3u9lBAx_SNAmp6H457oPcf"></script>              
+                        <br>
+                        <button class="button" onclick="backToScheduling()" style="width: 80%;">Back to scheduling</button>    
+                        <div id="paypal-button-container" style="width: 90%;"></div>   
+                    </div>
+                </div>
+
+                <div style="width: 95%;">
+
+                </div>        
+
+            </div>         
+            <div id="messageSentBox" class="messageSentBox">
+                Message Sent!                                       
+            </div>    
+        </section>
+        <section class="overlay hidden" id="expandedProfileView">
+
+            <div id="expandedProfileImage" style="height: 300px; width: 300px; background-size: cover; vertical-align: top; border-radius:5px; margin:10px; float: left;"></div>
+            <div style="display:inline-block;">
+                <div class="messageBoxTitle" id="expandedName">Name</div>
+                <div class="messageBoxTitle" id="expandedAge">Age</div><br>
+                <div class="messageBoxTitle" id="expandedAbout" style="font-size: 16px;">About</div>
+            </div>
+            <button class="closeButton" onclick="closeExpandedProfileView()">X</button>
+            <div>Send this user a message:</div>
+            <textarea class="messageTexaArea" id="messageText" style="width: 90%; margin-left: 5%;"></textarea>
+            <div class="messageBoxButton lightRed" onclick="hideMessageBox()">Cancel</div>      
+      
+            <div class="messageBoxButton" onclick="sendMessage()">Send</div>        
+            <div id="messageSentBox" class="messageSentBox">
+                Message Sent!                                       
+            </div>    
+        </section>
+        <section class="overlay hidden" id="loginBox">
+            <button class="closeButton" onclick="hideLoginBox()">X</button>
+            <div class="loginBoxInner">
+                <div id="signUpTab" class="loginBoxTab tabInactive" onclick="signUpTab() ">Sign Up</div>
+                <div id="loginTab" class="loginBoxTab" onclick="loginTab() ">Login</div>
+                <div class="loginFieldsSection">
+                    <div style="width: 90%;">
+                        <input id="emailInput" placeholder="Email" class="loginInput">
+                        <input id="passwordInput" type="password" placeholder="Password" class="loginInput">
+                        <div id="loginWelcomePlaceholder" style="width: 100%; height:230px; background-color: aqua; background-image: url('./img/welcomeGrass.jpg'); background-size: cover; margin-top: 10px; border-radius: 5px;">
+
+                        </div>
+                        <div id="signUpStuff" style="width: 100%; height:230px;" class="hidden">
+                            <div id="profileImageUpload" style="width:190px; margin-left: 0px;" class="hidden">
+                                <img id="profileImagePreview" src="./img/profile_placeholder.jpg" style="height: 180px; width:180; object-fit: contain; margin:0; margin-top:20px; float: left;">
+                                <input onchange="loadFile(event)" type="file" style="width:150px; margin-left: 0; margin-top:10px">
+                            </div>
+                            
+                            <div style="display: inline-block; width: calc(100% - 195px); vertical-align: top;">
+                                <input id="nameInput" placeholder="Name" class="loginInput hidden"  style="width: 64%; margin-left: 0px; float: left;">
+                                <input id="ageInput"  placeholder="Age"  class="loginInput hidden"  style="width: 34%; float: right; margin-bottom: 10px;">
+                                <textarea id="aboutInput" placeholder="About you" class="loginInput hidden"  style="width: 100%; height: 150px; margin-left: 0px; line-height: 14px; padding-top: 10px;"></textarea>
+                            </div>       
+                        </div>
+                    </div>                                                                                      
+                </div>
+                <div class="messageBoxButton lightRed" onclick="hideLoginBox()">Cancel</div>          
+                <div id="loginButton" class="messageBoxButton" onclick="login()">Login</div>  
+                <div id="signUpButton" class="messageBoxButton hidden" onclick="createUser()">Sign Up</div>        
+            </div>           
+        </section>
+        <section style="color:rgb(14, 0, 53); text-align: center;"> 
+                <div class="cardHolder indexBody"  style="height: auto; padding: 0; width: 100%; background-color: rgb(223, 236, 255);">
+                    <div style="width: 90%;">
+                        <div style="width: 100%; overflow: hidden; border-radius: 5px; margin-top: 10px; margin-bottom: 10px;">
+                            <img src="C:\Users\broski\Desktop\Projects\Misc Assets\welcomeWheat.jpg" style="width: 100%;">
+                        </div>                        
+                        <div class="topSectionCard">
+                            <div class="paragraph" style="font-size: 20px; width: 96%;">
+                                <h1 style="color:rgb(14, 0, 53); font-size:30px">This site</h1>
+                                <p style="font-size: 16px;">
+                                     This is a sample site.
+                                </p>                                                                
+                            </div>
+                        </div>
+                        <div class="topSectionCard secondTopCard">
+                            <h1 style="color:rgb(14, 0, 53); font-size:35px">Why</h1>
+                            <div class="paragraph" style="font-size: 20px; width: 96%;">                                
+                                <p style="font-size: 16px;">
+                                     This site is being created as a template for another site.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                    
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div onclick="loadLast()" class="arrowButton" style="margin-left:2%; text-align: center;"><</div>          
+        <section style="background-color: rgb(197, 230, 255);">
+            
+            <div style="color:rgb(14, 0, 53); width: 100%;">
+                <h1 style="color:rgb(14, 0, 53); font-size:35px; margin-top: 10;">Get started:</h1>                    
+            </div>
+            <div id="profileLoader"></div>
+            <div id="indexProfileLoader"></div>
+            <div class="cardHolder" id="cardHolderId">
+                <div id="profilesSection" style="width: 100%;">                    
+                    <div class="card profileCard loadingPlaceholder">                    
+                        <div class="profileCardInfo">
+                            <div class="profileCardImage">                            
+                                
+                            </div>
+                            <div class="nameAgeLine">
+                                <div class="cardName">Name Mc'Name</div><div class="cardAge">27</div>
+                            </div>
+                            <div class="bioSection">
+                                This is a bio for the profile that corresponds with this section. 
+                                The overflow will be hiddena nd ther will be no background. 
+                                Eventually the overflow will have a fade but only if it goes over the end.
+                            </div>
+                            <div class="buttonRow">
+                                <a title="Like Profile"><img src="./img/like_icon.png"></a>
+                                <a title="Expand View"><img src="./img/expand_icon.png"></a>
+                                <a title="View Profile"><img src="./img/eye_icon.png"></a>
+                                <a title="Message User"><img src="./img/comment_icon.png"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card profileCard loadingPlaceholder">                    
+                        <div class="profileCardInfo">
+                            <div class="profileCardImage"></div>
+                            <div class="nameAgeLine">
+                                <div class="cardName">Name Mc'Name</div><div class="cardAge">27</div>
+                            </div>
+                            <div class="bioSection">
+                                This is a bio for the profile that corresponds with this section. 
+                                The overflow will be hiddena nd ther will be no background. 
+                                Eventually the overflow will have a fade but only if it goes over the end.
+                            </div>
+                            <div class="buttonRow">
+                                <a><img src="./img/like_icon.png"></a>
+                                <a><img src="./img/expand_icon.png"></a>
+                                <a><img src="./img/eye_icon.png"></a>
+                                <a><img src="./img/comment_icon.png"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card profileCard female loadingPlaceholder">                    
+                        <div class="profileCardInfo">
+                            <div class="profileCardImage"></div>
+                            <div class="nameAgeLine">
+                                <div class="cardName">Name Mc'Name</div><div class="cardAge">27</div>
+                            </div>
+                            <div class="bioSection">
+                                This is a bio for the profile that corresponds with this section. 
+                                The overflow will be hiddena nd ther will be no background. 
+                                Eventually the overflow will have a fade but only if it goes over the end.
+                            </div>
+                            <div class="buttonRow">
+                                <a><img src="./img/like_icon.png"></a>
+                                <a><img src="./img/expand_icon.png"></a><a><img src="./img/eye_icon.png"></a>
+                                <a><img src="./img/comment_icon.png"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card profileCard loadingPlaceholder">                    
+                        <div class="profileCardInfo">
+                            <div class="profileCardImage"></div>
+                            <div class="nameAgeLine">
+                                <div class="cardName">Name Mc'Name</div><div class="cardAge">27</div>
+                            </div>
+                            <div class="bioSection">
+                                This is a bio for the profile that corresponds with this section. 
+                                The overflow will be hiddena nd ther will be no background. 
+                                Eventually the overflow will have a fade but only if it goes over the end.
+                            </div>
+                            <div class="buttonRow">
+                                <a><img src="./img/like_icon.png"></a>
+                                <a><img src="./img/expand_icon.png"></a>
+                                <a><img src="./img/eye_icon.png"></a>
+                                <a><img src="./img/comment_icon.png"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card profileCard female loadingPlaceholder">                    
+                        <div class="profileCardInfo">
+                            <div class="profileCardImage"></div>
+                            <div class="nameAgeLine">
+                                <div class="cardName">Name Mc'Name</div><div class="cardAge">27</div>
+                            </div>
+                            <div class="bioSection">
+                                This is a bio for the profile that corresponds with this section. 
+                                The overflow will be hiddena nd ther will be no background. 
+                                Eventually the overflow will have a fade but only if it goes over the end.
+                            </div>
+                            <div class="buttonRow">
+                                <a><img src="./img/like_icon.png"></a>
+                                <a><img src="./img/expand_icon.png"></a>
+                                <a><img src="./img/eye_icon.png"></a>
+                                <a><img src="./img/comment_icon.png"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card profileCard loadingPlaceholder">                    
+                        <div class="profileCardInfo">
+                            <div class="profileCardImage"></div>
+                            <div class="nameAgeLine">
+                                <div class="cardName">Name Mc'Name</div><div class="cardAge">27</div>
+                            </div>
+                            <div class="bioSection">
+                                This is a bio for the profile that corresponds with this section. 
+                                The overflow will be hiddena nd ther will be no background. 
+                                Eventually the overflow will have a fade but only if it goes over the end.
+                            </div>
+                            <div class="buttonRow">
+                                <a><img src="./img/like_icon.png"></a>
+                                <a><img src="./img/expand_icon.png"></a>
+                                <a><img src="./img/eye_icon.png"></a>
+                                <a><img src="./img/comment_icon.png"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card profileCard loadingPlaceholder show800to1100">                    
+                        <div class="profileCardInfo">
+                            <div class="profileCardImage"></div>
+                            <div class="nameAgeLine">
+                                <div class="cardName">Name Mc'Name</div><div class="cardAge">27</div>
+                            </div>
+                            <div class="bioSection">
+                                This is a bio for the profile that corresponds with this section. 
+                                The overflow will be hiddena nd ther will be no background. 
+                                Eventually the overflow will have a fade but only if it goes over the end.
+                            </div>
+                            <div class="buttonRow">
+                                <a><img src="./img/like_icon.png"></a>
+                                <a><img src="./img/expand_icon.png"></a>
+                                <a><img src="./img/eye_icon.png"></a>
+                                <a><img src="./img/comment_icon.png"></a>
+                            </div>
+                        </div>
+                    </div>                                                            
+                </div>
+                <div style="width: 100%;">
+                    <a class="button" href="advancedSearch.html">Advanced Search</a>
+                    <a class="button" href="home.html">View All</a>
+                </div>        
+            </div>
+            <div onclick="loadNext()" class="arrowButton" style="margin-right:50px;">></div>        
+        </section>
+        <footer>
+            <script src="index.js"></script>
+
+            <!-- The core Firebase JS SDK is always required and must be listed first -->
+            <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-app.js"></script>
+
+            <!-- TODO: Add SDKs for Firebase products that you want to use
+                https://firebase.google.com/docs/web/setup#available-libraries -->
+            <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-analytics.js"></script>
+            <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-database.js"></script>
+            <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-auth.js"></script>
+            <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-storage.js"></script>
+
+            <script src="fire.js"></script>
+        </footer>
+    </body>
+</html>
+
+<!--
+    
+    TODO:
+
+    make sure paypal is working
+    llc
+    domain name    
+
+    secondary    
+    advanced search
+    save users, additional functionality
+    update index
+
+    Info
+    https://github.com/joeGiusti/siteTemplate.git
+
+-->

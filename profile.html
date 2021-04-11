@@ -1,0 +1,75 @@
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width" >        
+        <meta name="keywords" content="game development, unity, vr" >        
+        <meta name="author" content="noone" >        
+        <title>Demo Page | Landing</title>        
+        <link rel="stylesheet" href="style.css">        
+        <div id="redirectHome"></div>
+        
+    </head>
+    <body>        
+        <header>
+            <input type="checkbox" id="menuCheckbox" onclick="menuCheck()" style="display: none;">
+            <label for="menuCheckbox" class="menuButton">&#9776</label>
+
+            <a href="index.html"><div class="logo">Logo</div></a>
+            <div class="placeHolder"></div>
+            <nav id="topNav" class="">
+                <ul>
+                    <li><a href="Home.html">Home</a></li>
+                    <li><a href="FAQ.html">F & Q</a></li>
+                    <li class="active" id="activeNavButton"><a href="profile.html">Profile</a></li>
+                    <li><a href="messages.html">Messages</a></li>
+                    <li><a href="cart.html">Cart</a></li>
+                </ul>
+            </nav>            
+        </header>
+        <section id="profileImageHolder">            
+            <div class="cardHolder" style="height: calc(100% - 110px); min-width: 800px;" id="cardHolderId">
+                <div class="card profileBox">
+                    <div style="display: inline-block; text-align: center;">                        
+                        <img id=profileImagePreview style="height: 300px; width:300px; display: inline-block;"/>
+                        <input onchange="loadFile(event)" type="file" style="width:150px; margin-left: 30%; margin-top:10px; display: block;">
+                    </div>
+                    <div style="vertical-align: top; display: inline-block; width: calc(100% - 380px);">
+                        <input id="profileName" placeholder="Name" class="loginInput" style="width: 90%;">
+                        <input id="profileAge" placeholder="Age" class="loginInput" style="width: 90%;">
+                        <textarea id="profileAbout" placeholder="About" class="loginInput" style="width: 90%; height: 160px; margin-left:5%;"></textarea>
+                        <select id="profileGender" class="loginInput" style="width: 90%;">
+                            <option value="female">Female</option>
+                            <option value="male">Male</option>
+                            <option value="otherGender">Other</option>
+                        </select>
+                    </div>
+                    <div style="width: 100%; margin-top: 30px;">
+                        <div id="loginButton" class="messageBoxButton lightRed" onclick="signOutUser()">Log Out</div>     
+                        <div id="loginButton" class="messageBoxButton" onclick="signOutUser()">Save & Homepage</div>                                              
+                        <div class="messageBoxButton lightRed" onclick="resetProfilePage()">Reset</div>          
+                        <!--checkbox class="messageBoxButton">Visible to Others</checkbox>-->
+                        <div id="loginButton" class="messageBoxButton" onclick="updateUserProfile()">Save</div>  
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer>
+            
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-app.js"></script>
+
+        <!-- TODO: Add SDKs for Firebase products that you want to use
+            https://firebase.google.com/docs/web/setup#available-libraries -->
+        <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-analytics.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-database.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-storage.js"></script>
+
+        <script src="fire.js"></script>
+
+        <script src="index.js"></script>
+        </footer>
+    </body>
+</html>
